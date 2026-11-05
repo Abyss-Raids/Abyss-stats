@@ -1,4 +1,4 @@
-name: Publish PlusOne Raid Archive
+name: Publish Abyss Guild Armory
 
 on:
   push:
@@ -9,36 +9,34 @@ permissions:
   contents: read
 
 concurrency:
-  group: github-pages
+  group: pages
   cancel-in-progress: true
 
 jobs:
   build:
-    permissions:
-      contents: read
-      pages: read
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
+      - name: Check out existing guild archive
+        uses: actions/checkout@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
-          package-manager-cache: false
-      - name: Verify parsing and import pipeline
+      - name: Verify original archive parser and analytics
         run: npm test
-      - name: Build public archive from raid-exports
+      - name: Generate raid, character, loot, and roll archives
         run: npm run build
-      - name: Configure Pages
+      - name: Apply Abyss rebrand to published site
+        run: node scripts/abyss-brand.mjs --dist
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload the public website only
+      - name: Upload generated public site
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
   deploy:
     needs: build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -47,6 +45,6 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy the Abyss guild archive
         id: deployment
         uses: actions/deploy-pages@v4
