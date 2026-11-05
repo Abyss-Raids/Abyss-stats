@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" role="img" aria-labelledby="title desc">
+  <title id="title">Abyss Guild Crest</title>
+  <desc id="desc">An antique silver shield, with a dark rift and glowing teal star deep below the horizon.</desc>
+  <defs>
+    <linearGradient id="rim" x1="0" x2="1" y2="1"><stop stop-color="#d6d2c5"/><stop offset=".45" stop-color="#69858d"/><stop offset="1" stop-color="#c3a980"/></linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202a3c"/><stop offset=".6" stop-color="#0c101b"/><stop offset="1" stop-color="#05080e"/></linearGradient>
+    <linearGradient id="chasm" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a4f5ed"/><stop offset=".25" stop-color="#377f9c"/><stop offset="1" stop-color="#27345f"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#c8fff5" stop-opacity=".7"/><stop offset=".44" stop-color="#438a9c" stop-opacity=".18"/><stop offset="1" stop-color="#438a9c" stop-opacity="0"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="3.5"/></filter>
+  </defs>
+  <path d="M160 12C114 32 57 38 26 48v169c0 68 54 115 134 153 80-38 134-85 134-153V48C263 38 206 32 160 12Z" fill="#05070d" stroke="url(#rim)" stroke-width="9"/>
+  <path d="M160 29C119 45 70 52 43 59v155c0 57 47 100 117 135 70-35 117-78 117-135V59c-27-7-76-14-117-30Z" fill="url(#field)" stroke="#6c7d88" stroke-width="1.8"/>
+  <path d="M56 124Q160 86 264 124" fill="none" stroke="#7c92a1" stroke-opacity=".6" stroke-width="1.5"/>
+  <path d="M56 230Q160 268 264 230" fill="none" stroke="#6d8193" stroke-opacity=".35" stroke-width="1.5"/>
+  <circle cx="160" cy="192" r="95" fill="url(#glow)"/>
+  <circle cx="160" cy="186" r="73" fill="none" stroke="#7494a4" stroke-width="3" opacity=".6"/>
+  <circle cx="160" cy="186" r="57" fill="none" stroke="#9bafad" stroke-width="1.5" opacity=".4"/>
+  <path d="M160 82 181 152 171 171 202 222 174 236 160 310 146 236 118 222 149 171 139 152Z" fill="#03080f" stroke="#4cb6bc" stroke-width="2"/>
+  <path d="M160 95 166 177 160 295 154 177Z" fill="url(#chasm)" filter="url(#blur)" opacity=".7"/>
+  <path d="M160 108 164 178 160 274 156 178Z" fill="url(#chasm)"/>
+  <path d="m160 143 7 30 30 7-30 7-7 30-7-30-30-7 30-7Z" fill="#c8fff8"/>
+  <path d="M90 88h32m76 0h32M85 292h38m74 0h38" stroke="#c0b599" stroke-opacity=".58" stroke-width="2"/>
+  <path d="M145 46h30M160 31v30" stroke="#bdb5a3" stroke-width="2"/>
+  <g fill="#c7beab"><circle cx="67" cy="180" r="2.3"/><circle cx="253" cy="180" r="2.3"/><circle cx="160" cy="337" r="2.3"/></g>
+</svg>

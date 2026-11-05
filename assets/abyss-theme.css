@@ -1,0 +1,48 @@
+/* Abyss visual identity. Layout, responsive rules and text scaling continue
+   to come from the original FATE site's assets/site.css. */
+:root {
+  --bg:#0b0e14;
+  --surface:#131924;
+  --panel:#171d29;
+  --raised:#222b38;
+  --border:#354251;
+  --border-soft:#283340;
+  --gold:#80c0c6;
+  --gold-strong:#c4eee7;
+  --muted:#9ca7b4;
+  --text:#e8edf1;
+  --ink:#b8cad2;
+}
+body {background:#0b0e14;}
+.sidebar {background:radial-gradient(ellipse at 20% 0%,#293c4e 0%,transparent 50%),linear-gradient(180deg,#151d29,#0d1119 65%);border-right-color:#3b5060;}
+.brand-name {color:#d2f0ed;letter-spacing:4px;font-size:calc(29px * var(--fate-font-scale, 1));}
+.brand-super,.brand-sub,.nav-label {color:#92aaba;}
+.sidebar-rule:before,.sidebar-rule:after,.sidebar-divider {background:linear-gradient(90deg,transparent,#588b99,transparent);}
+.nav-item {color:#c9d7dd;}
+.nav-item:hover {background:#253744;color:#e8f7f5;}
+.nav-item.active {background:linear-gradient(90deg,#253e50dd,#1b2a3a91);border-color:#4c7f8b88;box-shadow:inset 3px 0 #89d9d5;color:#d8fbf4;}
+.nav-glyph,.nav-item.active .nav-glyph {color:#92d5cf;}
+.body-pane {background:radial-gradient(ellipse 800px 400px at 65% 0%,#26394e55,transparent 70%),repeating-linear-gradient(90deg,#ffffff02 0 1px,transparent 1px 68px),#0b1018;}
+.topbar {background:#111822ec;border-bottom-color:#314353;}
+.breadcrumb strong,.top-status,.eyebrow,.count-chip {color:#a8d9db;}
+.hero {border-color:#4d6d7d;background:radial-gradient(ellipse at 74% 48%,#264c6570,transparent 46%),radial-gradient(circle at 25% 120%,#33305a44,transparent 55%),linear-gradient(114deg,#1d2735,#111923 55%,#0a101a);}
+.hero:before {border-color:#7093a250;}
+.hero:after {border-color:#71c3d03a;box-shadow:0 0 0 35px #71c3d00a,0 0 0 70px #71c3d009,0 0 0 105px #71c3d007;}
+.hero h1 em,.hero-kicker {color:#99e1d8;}
+.hero p {color:#b8cbd4;}
+.btn-gold {background:linear-gradient(120deg,#b8e9dd,#598b99);border-color:#c3f4ec;color:#07121c;}
+.btn-outline {background:#0a131bb8;border-color:#5a9299;color:#c9e7e6;}
+.btn-outline:hover {background:#243d4c;}
+.metric,.panel {background:linear-gradient(145deg,#1d2934,#111922);border-color:#304353;}
+.metric-value,.row-action,.row-meta,.section-title h2,.brand-crest {color:#badfdd;}
+.metric:before {background:#81c8c6;}
+.section-title:before,.section-title button {color:#89cccc;}
+.searchbar,.data-table th {background:#1b2a36;border-color:#344759;}
+.searchfield,.filter {background:#101823;color:#e1edef;border-color:#426070;}
+.data-table td,.row-link {border-bottom-color:#293b47;}
+.row-link:hover,.data-table tbody tr:hover {background:#2a4a5659;}
+.page-head h1,.hero h1 {color:#f0f7f6;}
+.upload-btn {background:#203240;border-color:#527784;color:#c6f4ef;}
+.upload-btn:hover {background:#314d5b;}
+.btn-gold:hover {filter:brightness(1.07);}
+::selection {background:#447e8c;color:#fff;}
