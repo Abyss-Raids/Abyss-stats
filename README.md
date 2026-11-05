@@ -1,12 +1,12 @@
-> **v1.1 experimental 3D viewer:** See [START_V1.1.md](START_V1.1.md), [3D_VIEWER_README.md](3D_VIEWER_README.md) and [PLUSONE_3D_MODEL_EXPORT_HANDOFF.md](PLUSONE_3D_MODEL_EXPORT_HANDOFF.md). Default 2D remains fully functional.
+> **Experimental 3D viewer (v1.1):** See [START_V1.1.md](START_V1.1.md), [3D_VIEWER_README.md](3D_VIEWER_README.md) and [PLUSONE_3D_MODEL_EXPORT_HANDOFF.md](PLUSONE_3D_MODEL_EXPORT_HANDOFF.md). Default 2D remains fully functional.
 
-# FATE Guild Armory & Raid Chronicles — v1.0.0
+# ABYSS Guild Armory & Raid Chronicles — v1.4.0
 
-Standalone, read-only, GitHub Pages website for World of Warcraft: Forever guild session JSON exports from PlusOne Master. **Original session JSON remains the source of truth.** The GitHub Actions build generates one small character profile per raider, independent session records, a searchable item registry, and precomputed guild/roll summaries. No backend, login, paid DB, or npm dependencies.
+Standalone, read-only Abyss PvE guild website for World of Warcraft: Forever session JSON exports from PlusOne Master. **Original session JSON remains the source of truth.** The GitHub Actions build generates one small character profile per raider, independent session records, a searchable item registry, and precomputed guild/roll summaries. No backend, login, paid DB, or npm dependencies.
 
-## What's new since v0.5.2
+## The Abyss Guild Website
 
-- New original dark Warcraft-inspired editorial theme: stone, bronze, antique gold, heraldic crest, custom armor illustration, class/rarity colors, responsive navigation.
+- New original dark Warcraft-inspired editorial theme: midnight blue, teal, silver, heraldic rift crest, custom armor illustration, class/rarity colors, responsive navigation.
 - Pages: Guild Overview, The Armory, Raid Chronicles, Loot Treasury, Roll Analyzer, Guild Statistics, character details, individual session details, item details.
 - Characters persist across sessions. Uses real character GUID when recorded; if no GUID, name-based tracking with ambiguous identity safeguards. Synthetic placeholder GUIDs intentionally ignored.
 - Character page shows current gear from **newest successful gear capture**, 19 slots, date-selector for historical snapshots, per-slot changes, class/race/character sex (in-game field), role, loot, SoftRes, +1, roll results, attendance and years of category statistics.
@@ -18,10 +18,10 @@ Standalone, read-only, GitHub Pages website for World of Warcraft: Forever guild
 ## GitHub install / upgrade
 
 1. **Back up your existing GitHub repository** and keep `raid-exports/` intact. Do not delete or overwrite real session JSON files.
-2. Unzip the **FullSource** or **GitHubUpload** archive and upload these files into the root of the existing `fate-stats` repository. Preserve the `.github/workflows/deploy.yml` file, and allow replacing root `index.html`, `assets/` code, `scripts/`, and project docs. The new `index.html` is modular and loads `assets/site.js` and `assets/site.css` (v0.5.2's embedded UI is deliberately retired).
+2. Unzip the latest repository source archive and upload these files into the root of the existing `Abyss-stats` repository. Preserve the `.github/workflows/deploy.yml` file, and allow replacing root `index.html`, `assets/` code, `scripts/`, and project docs. The new `index.html` is modular and loads `assets/site.js` and `assets/site.css` (v0.5.2's embedded UI is deliberately retired).
 3. On GitHub, Pages > Build and deployment must use **GitHub Actions**. The included workflow runs `npm test`, `npm run build`, and deploys only `dist/`.
 4. Add each future export as an individual `.json` file under `raid-exports/` and commit. GitHub rebuilds every derived profile automatically. Inactive characters are never automatically purged.
-5. Re-run **Actions > Publish PlusOne Raid Archive > Run workflow** to rebuild indexes after updating `data/item-overrides.json` or code. This does **not** scrape Wowhead for new metadata.
+5. Re-run **Actions > Publish Abyss Guild Armory > Run workflow** to rebuild indexes after updating `data/item-overrides.json` or code. This does **not** scrape Wowhead for new metadata.
 
 ## Local commands
 
@@ -45,7 +45,7 @@ data/item-overrides.json       optional manually verified corrections (git-track
 assets/parser.js               unchanged broad v4–v7 importer, enhanced for item quality
 assets/catalog.js              deterministic per-character/index projection
 assets/site.js                 actual active frontend (no duplicate inline JS)
-assets/site.css                actual active stylesheet
+assets/site.css                base stylesheet (with `assets/abyss-theme.css` for branding)
 scripts/build-archive.mjs      one-step static publication pipeline
 dist/                          generated deployment (git-ignored)
   index.html
@@ -98,3 +98,10 @@ The v0.5.2 `dist/data/archive.json` published a second full copy of every raw ex
 ## Copyright and affiliation
 
 This is an original, unofficial guild fan site. Warcraft trademarks, item names, and icons remain the property of their respective rights holders. WoW item links/tooltips rely on Wowhead's public embedding functionality; their service is external and may change. No downloaded WoW client art is included.
+
+
+## Live site and branding
+
+The live site is **https://abyss-raids.github.io/Abyss-stats/** (the project path has a capital A). The homepage title, crest and copy live directly in `index.html` and `assets/site.js`; styling is in `assets/abyss-theme.css`. The build no longer performs a text-replacement step.
+
+Original PlusOne session data, historical guild names, and legacy browser preference keys are not rewritten, so archived records remain accurate.

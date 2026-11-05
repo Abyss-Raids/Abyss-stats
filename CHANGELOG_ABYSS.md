@@ -1,3 +1,13 @@
+# Abyss Guild Armory v1.4.0 — Permanent site rebrand and title card
+
+- Permanently replaced FATE with ABYSS throughout active site HTML and JavaScript.
+- Designed the Abyss title card, guild identity, PvE and progression overview.
+- Ships Abyss crest and midnight/teal/silver theme directly with the static website.
+- Removed the deployment-time text replacement, added 404 case redirect and branding tests.
+- Retained all historical exports, parser, item and character records untouched.
+
+---
+
 # Abyss Guild Armory v1.3.0 — Branding & GitHub Pages update
 
 - Changed public-facing guild identity from **FATE** to **ABYSS** without modifying archive exports.

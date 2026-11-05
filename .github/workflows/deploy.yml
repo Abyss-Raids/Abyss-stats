@@ -26,8 +26,6 @@ jobs:
         run: npm test
       - name: Generate raid, character, loot, and roll archives
         run: npm run build
-      - name: Apply Abyss rebrand to published site
-        run: node scripts/abyss-brand.mjs --dist
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload generated public site

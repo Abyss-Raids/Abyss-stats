@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#100f0c">
-<meta name="description" content="FATE Guild Armory — the living record of our dungeon runs, raids, characters, loot and fortune.">
-<title>FATE | Guild Armory & Raid Archives</title>
-<link rel="icon" type="image/svg+xml" href="assets/fate-crest.svg">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0e14">
+<meta name="description" content="ABYSS Guild Armory and Raid Chronicles. World of Warcraft: Forever PvE guild history, raiders, loot awards, rolls and statistics.">
+<title>ABYSS | Guild Armory & Raid Chronicles</title>
+<link rel="icon" type="image/svg+xml" href="assets/abyss-crest.svg">
 <link rel="preconnect" href="https://wow.zamimg.com" crossorigin>
 <script>try{const size=Number(localStorage.getItem('fate.fontScale.v1'));if(Number.isFinite(size)&&size>=100&&size<=160)document.documentElement.style.setProperty('--fate-font-scale',String(size/100));}catch(_){}</script>
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/abyss-theme.css">
 <script>const whTooltips={colorLinks:false,renameLinks:false,iconizeLinks:false,iconSize:true};</script>
 <script defer src="https://wow.zamimg.com/js/tooltips.js"></script>
 <script type="module" src="assets/site.js"></script>
@@ -16,8 +17,8 @@
 <div id="app" class="shell">
  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
   <div class="brand">
-    <img class="brand-crest" src="assets/fate-crest.svg" alt="FATE heraldic crest">
-    <div><span class="brand-super">THE GUILD ARCHIVES</span><span class="brand-name">FATE</span><span class="brand-sub">ARMORY &amp; CHRONICLES</span></div>
+    <img class="brand-crest" src="assets/abyss-crest.svg" alt="ABYSS heraldic crest">
+    <div><span class="brand-super">THE GUILD ARCHIVES</span><span class="brand-name">ABYSS</span><span class="brand-sub">ARMORY &amp; CHRONICLES</span></div>
   </div>
   <div class="sidebar-rule"><span>✦</span></div>
   <div class="nav-label">THE ARCHIVES</div>
@@ -30,20 +31,20 @@
     <button class="nav-item" data-page="statistics"><span class="nav-glyph">▥</span> Guild Statistics <span class="nav-arrow">›</span></button>
   </nav>
   <div class="sidebar-bottom">
-    <div class="sidebar-quote"><span class="decor-quote">“</span> Every victory leaves its mark.<br>Every name has a story.</div>
+    <div class="sidebar-quote"><span class="decor-quote">“</span> Every raid leaves a story.<br>Every raider leaves a mark.</div>
     <div class="sidebar-divider"></div>
     <div class="side-status"><i></i><span id="archive-status">CONNECTING TO THE ARCHIVE</span></div>
-    <div class="sidebar-small">WORLD OF WARCRAFT: FOREVER<br>UNOFFICIAL GUILD ARCHIVE <b>v1.2</b></div>
+    <div class="sidebar-small">WORLD OF WARCRAFT: FOREVER<br>UNOFFICIAL GUILD ARCHIVE <b>v1.4</b></div>
   </div>
  </aside>
  <div class="body-pane">
   <header class="topbar">
    <button id="menu-toggle" class="icon-button menu-toggle" aria-label="Open navigation">☰</button>
-   <div class="breadcrumb"><span>FATE</span><span class="chevron">/</span><strong id="page-crumb">GUILD OVERVIEW</strong></div>
-   <div class="top-actions"><div class="font-controls" id="font-controls"><button type="button" class="font-settings-button" id="font-settings-button" aria-label="Text size settings" aria-controls="font-settings-panel" aria-expanded="false"><span class="font-icon" aria-hidden="true">Aa</span><span class="button-label">TEXT SIZE</span></button><section class="font-settings-panel" id="font-settings-panel" aria-label="Text size" hidden><div class="font-settings-title"><span>Reading settings</span><span id="font-scale-display">100%</span></div><p>Increase headings, table rows and text across the entire guild archive.</p><label for="font-scale-range"><span>Text size</span><span id="font-range-output">100%</span></label><input id="font-scale-range" type="range" min="100" max="160" step="5" value="100"><div class="font-presets"><button data-font-scale="100" type="button">100%</button><button data-font-scale="115" type="button">115%</button><button data-font-scale="130" type="button">130%</button><button data-font-scale="150" type="button">150%</button></div><button class="font-reset" id="font-reset" type="button">Reset to default</button></section></div><span class="top-status">✧ &nbsp; A LIVING HISTORY</span><label class="upload-btn"><input id="preview-files" type="file" accept=".json,application/json" multiple hidden><span>＋</span> PREVIEW EXPORT</label><button id="clear-preview" class="subtle-btn" hidden>CLEAR PREVIEW</button></div>
+   <div class="breadcrumb"><span>ABYSS</span><span class="chevron">/</span><strong id="page-crumb">GUILD OVERVIEW</strong></div>
+   <div class="top-actions"><div class="font-controls" id="font-controls"><button type="button" class="font-settings-button" id="font-settings-button" aria-label="Text size settings" aria-controls="font-settings-panel" aria-expanded="false"><span class="font-icon" aria-hidden="true">Aa</span><span class="button-label">TEXT SIZE</span></button><section class="font-settings-panel" id="font-settings-panel" aria-label="Text size" hidden><div class="font-settings-title"><span>Reading settings</span><span id="font-scale-display">100%</span></div><p>Increase headings, table rows and text across the entire guild archive.</p><label for="font-scale-range"><span>Text size</span><span id="font-range-output">100%</span></label><input id="font-scale-range" type="range" min="100" max="160" step="5" value="100"><div class="font-presets"><button data-font-scale="100" type="button">100%</button><button data-font-scale="115" type="button">115%</button><button data-font-scale="130" type="button">130%</button><button data-font-scale="150" type="button">150%</button></div><button class="font-reset" id="font-reset" type="button">Reset to default</button></section></div><span class="top-status">✧ &nbsp; THE ABYSS ARCHIVES</span><label class="upload-btn"><input id="preview-files" type="file" accept=".json,application/json" multiple hidden><span>＋</span> PREVIEW EXPORT</label><button id="clear-preview" class="subtle-btn" hidden>CLEAR PREVIEW</button></div>
   </header>
   <main id="main" class="main" tabindex="-1"><div class="loading"><div class="loading-mark">✦</div><p>Opening the archives…</p></div></main>
-  <footer class="site-footer"><span>FATE GUILD ARCHIVES <em>✦</em> FOR THE PEOPLE WHO WERE THERE</span><span>UNOFFICIAL FAN PROJECT · NOT AFFILIATED WITH BLIZZARD ENTERTAINMENT</span></footer>
+  <footer class="site-footer"><span>ABYSS GUILD ARCHIVES <em>✦</em> A RECORD OF THOSE WHO STOOD TOGETHER</span><span>UNOFFICIAL FAN PROJECT · NOT AFFILIATED WITH BLIZZARD ENTERTAINMENT</span></footer>
  </div>
  <div class="mobile-backdrop" id="mobile-backdrop"></div>
  <div class="toast" id="toast" aria-live="polite"></div>
